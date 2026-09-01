@@ -102,7 +102,7 @@ MySQL.ready(function()
             local  sql = "INSERT INTO `user_stock_data` VALUES (0, @steam, @stock, @amt)";
             MySQL.Async.execute(sql, {['@amt'] = amount, ['@steam'] = steam, ['@stock'] = stockAbbrev});
         end
-        i = 0;
+        local i = 0;
         while i < amount do 
             MySQL.Async.execute("INSERT INTO `stock_purchase_data` VALUES (0, @steam, @purch, @stock, 1)", {
                 ['@steam'] = steam,
